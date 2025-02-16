@@ -1,0 +1,1 @@
+{"region":{"Descripteur":{"type":"text","description":"","default_value":""},"Type":{"type":"radio","description":"","options":{"objet":"objet","scène":"scène","personne":"personne","notion":"notion","lieu":"lieu"},"default_options":{"objet":true}}},"file":{"MandragoreId":{"type":"text"}}}

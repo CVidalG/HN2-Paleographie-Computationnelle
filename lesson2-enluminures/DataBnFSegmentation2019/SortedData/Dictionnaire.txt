@@ -1,0 +1,90 @@
+Dictionnaire des données brutes
+
+-> Voir également la présentation et le dictionnaire des données du dump Mandragore, accessible sur http://api.bnf.fr/dumps-mandragore.
+Attention : les seuls identifiants faisant l'objet d'une politique de pérennité sont les identifiants ark (Gallica et Mandragore).
+
+*** Segments_Enluminures.csv ***
+Ce fichier contient les coordonnées des enluminures des 8 manuscrits segmentés, complétées de métadonnées sur ces enluminures issues de Mandragore.
+
+* ID_Mandragore = identifiant numérique de l'enluminure dans Mandragore. Convertible en ark pérenne et actionnable.
+* X = Abscisse de l'angle supérieur gauche de l'enluminure (en pixels, par rapport à l'angle supérieur gauche de l'image)
+* Y = Ordonnée de l'angle supérieur gauche de l'enluminure (en pixels, par rapport à l'angle supérieur gauche de l'image)
+* WIDTH = Largeur de l'enluminure (en pixels, sur l'image Gallica)
+* HEIGHT = Hauteur de l'enluminure (en pixels, sur l'image Gallica)
+* COORD IIIF = Ensemble des coordonnées de l'enluminure selon le formalisme IIIF (x, y, width, height)
+* URL IIIF = URL permettant de récupérer l'enluminure en pleine résolution par API Image IIIF
+* Image Gallica = Numéro de l'image dans le document numérique Gallica. Ce numéro forme un qualificatif de granularité de l'ark.
+* ARK Mandragore = Identifiant pérenne ark de l'enluminure, actionnable dans l'application web Mandragore.
+* ID MSS = Identifiant numérique interne du manuscrit dans Mandragore.
+* ID part = Identifiant numérique interne de la partie dans Mandragore;
+* Folio = Numéro de feuillet (label)
+* Lég corrigé = Sujet de l'enluminure (titre forgé)
+* Rubrique = Rubrique du texte accompagnant l'enluminure
+* Inscriptions = Inscriptions sur l'enluminure
+* Notes = Notes descriptives de Mandragore
+* Part = Identifiant de la partie (lettre) sur l'application web Mandragore
+* NomUs corrigé = Nom usuel du manuscrit
+* AutT corrigé = Auteur, Titre, Traducteur du texte
+* Dt = Siècle de production (forme numérique de tri)
+* Dt corrigé = Siècle de production (forme littérale)
+* DtP = Date précise de production (forme numérique de tri)
+* DtP corrigé = Date précise de production (forme littérale)
+* Art corrigé = Nom de l'artiste identifié
+* Origine corrigé = Lieu de production (pays actuel)
+* Loc corrigé = Lieu de production (région historique identifiée)
+* Division = Département de la BnF conservant le manuscrit
+* Libelle = Fonds (collection de la BnF) auquel appartient le manuscrit
+* CoteN = Cote principale (identifiant du manuscrit à la BnF)
+* CoteNb = Cote secondaire
+* CoteA = Complément littéral de la cote
+* Volume = Numéro de volume d'une série
+* CoteAd = Feuillets extrêmes d'une unité codicologique
+
+*** Segments_Tags.csv ***
+Ce fichier contient les coordonnées des tags, descripteurs repérés sur les enluminures des 6 manuscrits segmentés, complétées de métadonnées issues de Mandragore sur ces descripteurs.
+On parle ici de "descripteurs" pour les classes et de "tags" pour leurs occurrence(s) sur chaque enluminure.
+
+* ID_Enluminure = identifiant numérique de l'enluminure dans Mandragore. Convertible en ark pérenne et actionnable.
+* descripteur = libellé du descripteur (classe)
+* Type_desc = type de descripteur (pour évaluer la pertinence des coordonnées). Propre à ce set de données, peut prendre les valeurs suivantes : objet, scène, personne, notion, lieu.
+* Shape = Type de forme. Dans ce set de données, uniquement des rectangles (rect).
+* X = Abscisse de l'angle supérieur gauche du rectangle localisant le tag (en pixels, par rapport à l'angle supérieur gauche de l'enluminure)
+* Y = Ordonnée de l'angle supérieur gauche du rectangle localisant le tag (en pixels, par rapport à l'angle supérieur gauche de l'enluminure)
+* Width = Largeur du rectangle localisant le tag (en pixels, sur la reproduction de l'enluminure)
+* Height = Hauteur du rectangle localisant le tag (en pixels, sur la reproduction de l'enluminure)
+* ARK_Gallica = Nom ark du document numérique reproduisant le manuscrit, utilisable dans Gallica avec le préfixe ark:/12148/
+* Image_Gallica = Qualificatif de granularité de l'ark Gallica, désignant le numéro de l'image sur laquelle apparaît l'enluminure
+* Enluminure_IIIF_X = Abscisse de l'angle supérieur gauche de l'enluminure (en pixels, par rapport à l'angle supérieur gauche de l'image Gallica reproduisant la page)
+* Enluminure_IIIF_Y = Ordonnée de l'angle supérieur gauche de l'enluminure (en pixels, par rapport à l'angle supérieur gauche de l'image Gallica reproduisant la page)
+* Enluminure_IIIF_Width = Largeur de l'enluminure (en pixels, sur l'image Gallica)
+* Enluminure_IIIF_Height = Hauteur de l'enluminure (en pixels, sur l'image Gallica)
+* Tag_absoluteX = Abscisse de l'angle supérieur gauche du rectangle localisant le tag (en pixels, par rapport à l'angle supérieur gauche de l'image reproduisant la page entière)
+* Desc_absoluteY = Ordonnée de l'angle supérieur gauche du rectangle localisant le tag (en pixels, par rapport à l'angle supérieur gauche de l'image reproduisant la page entière)
+* Desc_absoluteWidth = Largeur du rectangle localisant le tag (en pixels)
+* Desc_absoluteHeight = Hauteur du rectangle localisant le tag (en pixels)
+* ID Desc = identifiant numérique du descripteur
+* Desc = Libellé (forme principale en français) du descripteur
+* 175$e = Complément de définition du descripteur
+* 600$a = Notes sur le descripteur (dans Mandragore)
+* ID Tag = Identifiant numérique unique du tag (de l'occurrence du descripteur sur l'enluminure), interne à Mandragore et non publié.
+* ARK_Mandragore = Identifiant pérenne ark de l'enluminure, actionnable dans l'application web Mandragore.
+
+*** FormesRejeteesDescripteurs.csv ***
+Ce fichier rassemble les libellés alternatifs (synonymes) et traductions des descripteurs utilisés dans les manuscrits segmentés.
+Il contient des données issues du dump Mandragore, complétées par l'identification de la langue du libellé.
+
+* ID_Desc = identifiant numérique du descripteur
+* Desc = Libellé (forme principale en français) du descripteur
+* ID_FR = identifiant numérique interne du libellé alternatif
+* 475$a = libellé alternatif
+* 475$e = complément de définition du libellé alternatif
+* Langue = langue du libellé alternatif (ISO 639-1)
+
+*** Tags_Index.csv ***
+Ce fichier donne la correspondance entre les identifiants de chaque enluminure, de chaque descripteur (classe) et de chaque tag (occurrence du descripteur sur l'enluminure).
+Les identifiants internes des tags ne sont pas publiées dans la version 2018 du dump Mandragore.
+
+* ID_Enluminure = identifiant numérique de l'enluminure dans Mandragore. Convertible en ark pérenne et actionnable sur l'application web Mandragore.
+* ID_Desc = identifiant numérique interne du descripteur dans Mandragore. Utilisé comme URI par l'application web Mandragore, sans garantie de pérennité.
+* Desc = libellé (forme principale en français) du descripteur
+* ID_Tag = identifiant numérique unique du tag (de l'occurrence du descripteur sur l'enluminure), interne à Mandragore et non publié.
